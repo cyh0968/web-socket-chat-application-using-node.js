@@ -17,7 +17,7 @@ webScoketServer.on('connection', (client) => {
 });
 
 function broadcast(msg) {
-    for (const client of wss.clients) {
+    for (const client of webScoketServer.clients) {
         if (client.readyState === ws.OPEN) {
             client.send(msg);
         }
